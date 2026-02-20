@@ -42,3 +42,13 @@ function debounce(
     }, delay);
   };
 }
+
+const debouncedLog = debounce((x: number) => {
+  console.log(x + 1);
+}, 500);
+
+console.log(formatCurrency(200, 'en-IN', 'INR'));
+console.log(clamp(5000, 2000, 5500));
+console.log(slugify('Hello World'));
+console.log(truncate('Hello world', 5));
+debouncedLog(5);
