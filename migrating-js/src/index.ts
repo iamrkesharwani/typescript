@@ -1,3 +1,7 @@
+// --- formatCurrency ---
+// Passing a string instead of number
+// Passing wrong types of locales or currency
+// Using result as a number
 function formatCurrency(
   amount: number,
   locale: string = 'en-US',
@@ -9,10 +13,15 @@ function formatCurrency(
   }).format(amount);
 }
 
+// --- Clamp ---
+// Passing strings instead of numbers
+// Treating return value as string
 function clamp(value: number, min: number, max: number): number {
   return Math.min(Math.max(value, min), max);
 }
 
+// --- Slugify ---
+// Passing numbers
 function slugify(text: string): string {
   return text
     .toLowerCase()
@@ -22,6 +31,8 @@ function slugify(text: string): string {
     .replace(/-+/g, '-');
 }
 
+// --- Truncate ---
+// Calling .length on non-string
 function truncate(text: string, maxLength: number): string {
   if (text.length <= maxLength) {
     return text;
@@ -29,6 +40,10 @@ function truncate(text: string, maxLength: number): string {
   return text.slice(0, maxLength) + '...';
 }
 
+// --- Debounce ---
+// Passing non-function
+// Passing non-number delay
+// Expecting return value
 function debounce(
   fn: (...args: any[]) => void,
   delay: number
