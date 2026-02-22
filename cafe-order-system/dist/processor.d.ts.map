@@ -1,0 +1,1 @@
+{"version":3,"file":"processor.d.ts","sourceRoot":"","sources":["../src/processor.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,UAAU,EAAE,YAAY,EAAa,MAAM,YAAY,CAAC;AAEtE,qBAAa,UAAW,SAAQ,KAAK;gBACvB,OAAO,EAAE,MAAM;CAI5B;AASD,wBAAgB,YAAY,CAAC,KAAK,EAAE,UAAU,GAAG,YAAY,CAe5D"}
