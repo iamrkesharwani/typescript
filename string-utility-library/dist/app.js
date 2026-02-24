@@ -1,0 +1,12 @@
+import * as fn from './index.js';
+const name = 'rahul kesharwani';
+const capitalized = fn.capitalize(name);
+const short = fn.truncate(name);
+const slug = fn.slugify(name);
+const words = fn.countWords(name);
+const padded = fn.padStart(7);
+console.log(capitalized);
+console.log(short);
+console.log(slug);
+console.log(words);
+console.log(padded);
