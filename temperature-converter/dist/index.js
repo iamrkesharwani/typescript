@@ -1,22 +1,16 @@
 function convertTemp(input, fromUnit, toUnit) {
-    if (input === undefined || Number.isNaN(input))
-        throw new Error('Enter a temperature input');
-    let temperature = input;
-    if (fromUnit === 'celsius' && toUnit === 'farenheit') {
-        temperature = (input * 9) / 5 + 32;
+    if (input == null || Number.isNaN(input)) {
+        throw new Error('Invalid temperature input');
     }
-    else if (fromUnit === 'farenheit' && toUnit === 'celsius') {
-        temperature = ((input - 32) * 5) / 9;
+    if (fromUnit === toUnit) {
+        return input;
     }
-    else if (fromUnit === toUnit) {
-        temperature = input;
+    if (fromUnit === 'celsius' && toUnit === 'fahrenheit') {
+        return (input * 9) / 5 + 32;
     }
-    else {
-        throw new Error('Invalid conversion');
+    if (fromUnit === 'fahrenheit' && toUnit === 'celsius') {
+        return ((input - 32) * 5) / 9;
     }
-    return temperature;
+    throw new Error('Invalid conversion');
 }
-console.log(convertTemp(10, 'celsius', 'farenheit'));
-console.log(convertTemp(0, 'celsius', 'farenheit'));
-console.log(convertTemp(32, 'farenheit', 'celsius'));
 export {};
