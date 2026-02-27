@@ -1,0 +1,13 @@
+import { render } from './helper.js';
+let successFlow = { state: 'idle' };
+console.log(render(successFlow));
+successFlow = { state: 'loading' };
+console.log(render(successFlow));
+successFlow = { state: 'success', data: 'User data loaded' };
+console.log(render(successFlow));
+let errorFlow = { state: 'idle' };
+console.log(render(errorFlow));
+errorFlow = { state: 'loading' };
+console.log(render(errorFlow));
+errorFlow = { state: 'error', message: 'Network request failed' };
+console.log(render(errorFlow));
