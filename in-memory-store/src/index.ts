@@ -1,0 +1,20 @@
+import { Store } from './types.js';
+import type { Task } from './types.js';
+
+const taskStore = new Store<Task>();
+
+taskStore.add({ id: '1', title: 'Learn TypeScript', completed: false });
+taskStore.add({ id: '2', title: 'Build project', completed: false });
+const task = taskStore.getById('1');
+const tasks = taskStore.getAll();
+const updatedTask = taskStore.update('1', { completed: true });
+const deleteTask = taskStore.remove('2');
+const result = taskStore.findWhere('title', 'Learn TypeScript');
+const results = taskStore.filterWhere('completed', false);
+
+console.log('getById:', task);
+console.log('getAll:', tasks);
+console.log('update:', updatedTask);
+console.log('delete:', deleteTask);
+console.log('findWhere:', result);
+console.log('filterWhere:', results);
