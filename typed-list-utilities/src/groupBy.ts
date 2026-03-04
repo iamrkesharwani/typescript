@@ -19,4 +19,4 @@ function groupBy<T, K extends keyof T>(
   return result;
 }
 
-groupBy(users, 'role');
+console.log(groupBy(users, 'role'));
