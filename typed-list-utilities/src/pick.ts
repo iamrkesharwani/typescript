@@ -4,13 +4,16 @@ const users = [
   { id: 3, role: 'admin', name: 'Priya' },
 ];
 
-function pick<T, K extends keyof T>(obj: T, keys: readonly K[]): Pick<T, K> {
-  const result = {} as Pick<T, K>;
+function pick<T, const K extends readonly (keyof T)[]>(
+  obj: T,
+  keys: K
+): Pick<T, K[number]> {
+  const result = {} as Pick<T, K[number]>;
   for (const key of keys) {
-    (result as any)[key] = obj[key];
+    result[key] = obj[key];
   }
   return result;
 }
 
 const targetUser = users[0];
-if (targetUser) console.log(pick(targetUser, ['id', 'role'] as const));
+if (targetUser) console.log(pick(targetUser, ['id', 'role']));
