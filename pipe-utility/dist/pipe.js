@@ -1,0 +1,3 @@
+export function pipe(value, ...fns) {
+    return fns.reduce((acc, fn) => fn(acc), value);
+}
